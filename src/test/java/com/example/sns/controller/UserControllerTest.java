@@ -106,7 +106,7 @@ public class UserControllerTest {
         String password = "password";
 
 
-        when(userService.login(userName, password)).thenThrow(new SnsApplicationException(ErrorCode.DUPLICATED_USER_NAME, ""));
+        when(userService.login(userName, password)).thenThrow(new SnsApplicationException(ErrorCode.INVALID_PASSWORD));
 
 
         mockMvc.perform(post("/api/v1/users/login")
